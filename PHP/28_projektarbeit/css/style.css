@@ -1,0 +1,26 @@
+body{
+    background-color: rgb(54, 56, 58);
+    text-align: center;
+    font-family: serif;
+}
+
+h1{
+    color: rgb(113, 98, 11);
+}
+
+h2{
+    color: darkgoldenrod;
+}
+
+.title{
+    color: rgb(137, 121, 4);
+    font-size: x-large;
+}
+
+a{
+    color: aqua;
+}
+
+label{
+    color: antiquewhite;
+}
