@@ -1,3 +1,7 @@
+<?php
+$letter = $_GET['char'] ?? '';
+$is_table = $_GET['view'] ?? 'list';
+?>
 <!doctype html>
 <html lang="de">
 <head>
@@ -16,7 +20,8 @@
 <main class="container">
     <header>
         <h1>Namen filtern</h1>
-        <a role="button" href="index.php?view=table">Tabellenansicht</a>
+        <a role="button" href="index.php?char=<?= $letter ?>&view=table">Tabellenansicht</a>
+        <a role="button" href="index.php?char=<?= $letter ?>&view=list">Listenansicht</a>
         <nav style="display: flex; flex-wrap: wrap">
             <?php include './includes/letters.php'; ?>
         </nav>
@@ -26,20 +31,9 @@
         <?php
         include_once './includes/functions.php';
         $is_table = $_GET['view'] ?? null;
-        var_dump($is_table);
-        if(isset($_GET['char']) && ($is_table !== 'table')){
-            $first_letter = $_GET['char'] ?? '';
-            echo "<h3>Namen die mit " . e($first_letter) . " beginnen</h3>";
-            include dirname(__DIR__) . '/uebung-P5/includes/filtered_names.php';
-        } 
-        if($is_table === 'table'){
-            $first_letter = $_GET['char'] ?? '';
-            echo "<h3>Namen die mit " . e($first_letter) . " beginnen</h3>";
-            include dirname(__DIR__) . '/uebung-P5/includes/table_names.php';
-        } else{
-            include './includes/instruction.php';
-        }
-        
+        $first_letter = $_GET['char'] ?? '';
+        echo "<h3>Namen die mit " . e($first_letter) . " beginnen</h3>";
+        include_once dirname(__DIR__) . '/uebung-P5/includes/filtered_names.php';
         ?>
     </section>
 </main>
