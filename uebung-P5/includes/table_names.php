@@ -1,7 +1,5 @@
 <?php
 include_once './includes/functions.php';
-include './includes/persons_data.php';
-include 'filtered_names.php';
 
 ?>
 
@@ -18,7 +16,7 @@ include 'filtered_names.php';
             <td><?= e($person['first_name']); ?></td>
             <td><?= e($person['last_name']); ?></td>
             <td><?= e($person['birthdate']); ?></td>
-        </tr>;
+        </tr>
     <?php endforeach; ?>
 
 </table>

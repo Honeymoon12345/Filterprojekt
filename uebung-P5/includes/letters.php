@@ -19,9 +19,9 @@ function getFirstLetterOnce(array $data, string $key): array{
     return $first_letters;
 }
 $current_letter = $_GET['char'] ?? '';
-
+$is_table = $_GET['view'] ?? 'list';
 ?>
 
 <?php foreach(getFirstLetterOnce($persons, 'first_name') as $letter => $_) : ?>
-    <a href="/uebung-P5/index.php?char=<?php echo $letter ?>&view=table" role="button" style="margin: 10px 0" class="<?= $current_letter === $letter ? 'selected' : ''?>"><?php echo e($letter); ?></a>
+    <a href="/uebung-P5/index.php?char=<?php echo $letter ?>&view=<?= $is_table; ?>" role="button" style="margin: 10px 0" class="<?= $current_letter === $letter ? 'selected' : ''?>"><?php echo e($letter); ?></a>
 <?php endforeach; ?>
